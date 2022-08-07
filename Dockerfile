@@ -7,7 +7,7 @@ RUN apt-get update
 RUN apt-get upgrade -y
 #install ngnix
 RUN apt-get install -y nginx
-RUN ufw allow 'Nginx HTTPS'
+# RUN ufw allow 'Nginx HTTPS'
 RUN mkdir -p /var/www/$DOMAIN/html
 RUN touch /var/www/$DOMAIN/html/index.html
 RUN echo '<h1>Hello World</h1>' > /var/www/$DOMAIN/html/index.html
