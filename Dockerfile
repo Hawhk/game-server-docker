@@ -27,7 +27,7 @@ RUN printf 'server { \n\
 }' > /etc/nginx/sites-available/$DOMAIN
 RUN ln -s /etc/nginx/sites-available/$DOMAIN /etc/nginx/sites-enabled/$DOMAIN
 RUN sed -i 's/# server_names_hash_bucket_size 64;/server_names_hash_bucket_size 64;/g' /etc/nginx/nginx.conf
-RUN systemctl restart nginx
+RUN /etc/init.d/nginx restart
 #install Nodejs
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
 RUN source ~/.bashrc
