@@ -1,7 +1,7 @@
 FROM ubuntu
 LABEL maintainer="Hawhk"
 
-ARG DOMAIN
+ARG DOMAIN=hawhk.se
 
 RUN apt-get update
 RUN apt-get upgrade -y
@@ -19,7 +19,7 @@ RUN printf 'server { \n\
     root /var/www/$DOMAIN/html; \n\
     index index.html index.htm index.nginx-debian.html; \n\
     \n\
-    server_name $DOMAIN; \n\
+    server_name games.$DOMAIN; \n\
     \n\
     location / { \n\
         try_files $uri $uri/ =404; \n\
